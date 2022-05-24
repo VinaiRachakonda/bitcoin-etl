@@ -1,4 +1,3 @@
-from re import T
 from blockchainetl.jobs.exporters.console_item_exporter import ConsoleItemExporter
 from blockchainetl.jobs.exporters.google_pubsub_item_exporter import GooglePubSubItemExporter
 from blockchainetl.jobs.exporters.s3_item_exporter import AwsItemExporter
