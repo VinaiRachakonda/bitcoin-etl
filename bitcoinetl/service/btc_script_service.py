@@ -8,7 +8,7 @@ def script_hex_to_non_standard_address(script_hex):
     
     utxo_hash = script_pub_key_to_pub_key_hash(script_hex)
     utxo_addr = pub_key_hash_to_addr(utxo_hash)
-    return utxo_addr
+    return utxo_addr.decode("utf-8")
 
 def script_pub_key_to_pub_key_hash(script_pub_key: str, type: str = 'pubkey'):
     """
@@ -25,8 +25,6 @@ def script_pub_key_to_pub_key_hash(script_pub_key: str, type: str = 'pubkey'):
         if type == 'pubkey':
             # Extract Public Key from ScriptPubKey
             pubkey_hex = script_pub_key[2:-2]
-            # The number of bytes in the Public Key
-            print(f'The length of public key is {int("0x" + script_pub_key[:2], base=16)} bytes.')
             # Convert Public Key hex too binary
             pubkey_bin = binascii.unhexlify(pubkey_hex)
             # Create SHA-256 hash from Public Key binary
