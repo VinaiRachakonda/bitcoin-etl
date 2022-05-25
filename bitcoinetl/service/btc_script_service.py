@@ -26,7 +26,7 @@ def script_pub_key_to_pub_key_hash(script_pub_key: str, type: str = 'pubkey'):
             # Extract Public Key from ScriptPubKey
             pubkey_hex = script_pub_key[2:-2]
             # The number of bytes in the Public Key
-            print(f'The length of public key is {int("0x" + script_pub_key_hex[:2], base=16)} bytes.')
+            print(f'The length of public key is {int("0x" + script_pub_key[:2], base=16)} bytes.')
             # Convert Public Key hex too binary
             pubkey_bin = binascii.unhexlify(pubkey_hex)
             # Create SHA-256 hash from Public Key binary
